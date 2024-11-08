@@ -8,6 +8,7 @@ import { Provider } from 'react-redux'
 import Header from './components/ui/Header/Header';
 import MainHeader from './components/ui/Header/mainHeaader';
 import Product from './components/products/Product';
+import Cart from './components/cart/cart';
 function App() {
   // const [theme,setTheme] = useState(true)
   const { setTheme } = useTheme();
@@ -15,9 +16,8 @@ function App() {
 
     <div className=''>
       <Header />
-      <ModeToggle />
-      <MainHeader/>
-      <Product/>
+      <Product />
+      <Cart/>
         {/* <Home /> */}
         <Button onClick={() => {
           setTheme("light");
