@@ -1,5 +1,5 @@
 import "./App.css";
-import { useTheme } from "@/components/theme-provider";
+// import { useTheme } from "@/components/theme-provider";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/menu/Home";
 import Header from "./components/ui/header/Header";
@@ -15,7 +15,7 @@ import ProtectedRoute from "./routes/protectedRoutes";
 import OrderSuccess from "./components/cart/OrderSuccess";
 function App() {
   // const [theme,setTheme] = useState(true)
-  const { setTheme } = useTheme();
+  // const { setTheme } = useTheme();
   return (
     <div className=" bg-slate-300 dark:bg-slate-800">
       <Header />
