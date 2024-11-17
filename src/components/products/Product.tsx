@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "@/redux/cartSlice";
 import { Product as ProductType } from "@/redux/cartSlice"; // Import the Product type
 import { items as itemsType } from "@/redux/cartSlice";
+import { Link } from "react-router-dom";
 
 const Product: React.FC = () => {
   const products = useSelector((state: ProductType) => state.product.product);
@@ -39,11 +40,13 @@ const Product: React.FC = () => {
             className="max-w-sm mx-auto bg-white rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 text-center"
             key={item.id}
           >
+            <Link to={`/product/${item.id}`}>
             <img
               className="object-contain h-56 w-96"
               src={item.image}
               alt={item.category}
-            />
+              />
+            </Link>
             <p className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white h-28 mt-4">
               {item.title}
             </p>

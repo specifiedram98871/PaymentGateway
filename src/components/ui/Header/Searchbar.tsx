@@ -2,7 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass, faBagShopping } from '@fortawesome/free-solid-svg-icons'
 import { useSelector } from 'react-redux';
-import { Link } from 'lucide-react';
+import { Link } from 'react-router-dom';
 const Searchbar = () => {
   const cart = useSelector((state: any) => state.cart.items);
   console.log(cart.length)
@@ -17,9 +17,11 @@ const Searchbar = () => {
         />
       </div>
       <div className='p-2 flex items-center hover:bg-slate-300 rounded-full '>
+        <Link to="/cart">
         
           <FontAwesomeIcon className=' h-5 w-5 rounded-full P-1' icon={faBagShopping} />
           <span className='font-bold relative top-[-10px] right-0'>{cart.length}</span>
+        </Link>
         
       </div>
     </div>

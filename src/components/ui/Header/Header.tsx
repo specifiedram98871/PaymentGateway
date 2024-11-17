@@ -1,38 +1,53 @@
 import React from "react";
 import MainHeader from "./mainHeaader";
 import { ModeToggle } from "@/components/mode-toggle";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const user = useSelector((state) => state.user.user);
+  console.log("user", user);
   return (
     <div>
-      <div className="fixed top-24 right-6">
-    < ModeToggle />
-    </div>
-    <div className="flex justify-between items-center dark:bg-slate-700 dark:text-white bg-slate-100 tracking-tight text-black px-[1.8rem] py-[0.2rem] font-medium">
-      <div className="">
-        <img
-          src="./images/image.png"
-          className=" object-contain w-[1.5rem] h-[1.5rem] rounded-full"
-          alt=""
-        />
+      <div className="fixed top-28 right-6 z-50">
+        <ModeToggle />
       </div>
-      <div className=" ">
-        <ul className="inline-flex ">
-          <li >
-            Find a Store <span className="mx-[1.1rem]">|</span>{" "}
-          </li>
-          <li>
-            Help <span className="mx-[1.1rem]">|</span>
-          </li>
-          <li>
-            Join Us <span className="mx-[1.1rem]">|</span>
-          </li>
-          <li>Sign In</li>
-        </ul>
-      </div>
+      <div className="flex justify-between items-center dark:bg-slate-700 dark:text-white bg-slate-100 tracking-tight text-black px-6 py-2 font-medium">
+        <div>
+          <Link to="/">
+            <img
+              src="./images/image.png"
+              className="object-contain w-6 h-6 rounded-full"
+              alt="profile"
+            />
+          </Link>
+        </div>
+        <div>
+          <ul className="inline-flex space-x-4">
+            <li className="hover:text-blue-500">
+              Find a Store <span className="mx-2">|</span>
+            </li>
+            <li className="hover:text-blue-500">
+              Help <span className="mx-2">|</span>
+            </li>
+            <li className="hover:text-blue-500">
+              Join Us <span className="mx-2">|</span>
+            </li>
+            {!user && (
+              <Link to="/signin" className="hover:text-blue-500">
+                <li>Sign In</li>
+              </Link>
+            )}
+            {user && (
+              <Link to="/profile" className="hover:text-blue-500">
+                <li>{user.username}</li>
+              </Link>
+            )}
+          </ul>
+        </div>
       </div>
       <MainHeader />
-      </div>
+    </div>
   );
 };
 

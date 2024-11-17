@@ -1,30 +1,45 @@
-import './App.css'
-import { ModeToggle } from '@/components/mode-toggle'
-import { Button } from '@/components/ui/button'
-import { useTheme } from '@/components/theme-provider'
-import Home from './components/menu/Home';
-import { store } from './redux/Store'
-import { Provider } from 'react-redux'
-import Header from './components/ui/Header/Header';
-import MainHeader from './components/ui/Header/mainHeaader';
-import Product from './components/products/Product';
-import Cart from './components/cart/cart';
+import "./App.css";
+import { useTheme } from "@/components/theme-provider";
+import { Routes, Route } from "react-router-dom";
+import Home from "./components/menu/Home";
+import Header from "./components/ui/header/Header";
+import Product from "./components/products/Product";
+import ProductDetails from "./components/products/ProductDetails";
+import CategoryProduct from "./components/products/CategoryProduct";
+import Cart from "./components/cart/cart";
+import Footer from "./components/ui/Footer/Footer";
+import Login from "./components/Users/Login";
+import Signin from "./components/Users/Signin";
+import Payment from "./components/cart/Payment";
+import ProtectedRoute from "./routes/protectedRoutes";
+import OrderSuccess from "./components/cart/OrderSuccess";
 function App() {
   // const [theme,setTheme] = useState(true)
   const { setTheme } = useTheme();
   return (
-
-    <div className=''>
+    <div className=" bg-slate-300 dark:bg-slate-800">
       <Header />
-      <Product />
-      <Cart/>
-        {/* <Home /> */}
-        <Button onClick={() => {
-          setTheme("light");
-        }}>Toggle</Button>
-      </div>
-    
-  )
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/product" element={<Product />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/category/:name" element={<CategoryProduct />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signin" element={<Signin />} />
+        <Route path="/order/success" element={<OrderSuccess />} />
+        <Route
+          path="/process/payment"
+          element={
+            <ProtectedRoute>
+              <Payment />
+            </ProtectedRoute>
+          }
+        ></Route>
+      </Routes>
+      <Footer />
+    </div>
+  );
 }
 
-export default App
+export default App;
