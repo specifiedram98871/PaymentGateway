@@ -13,11 +13,13 @@ import Signin from "./components/Users/Signin";
 import Payment from "./components/cart/Payment";
 import ProtectedRoute from "./routes/protectedRoutes";
 import OrderSuccess from "./components/cart/OrderSuccess";
+import AdminDashboard from "./admin/adminDashboard";
 function App() {
+  
   // const [theme,setTheme] = useState(true)
   // const { setTheme } = useTheme();
   return (
-    <div className=" bg-slate-300 dark:bg-slate-800">
+    <div className=" bg-slate-300 dark:bg-slate-800 ">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -36,6 +38,12 @@ function App() {
             </ProtectedRoute>
           }
         ></Route>
+        <Route path="/admin/dashboard" element={
+          <ProtectedRoute isAdmin={true}>
+            <AdminDashboard/>
+          </ProtectedRoute> 
+        }></Route>
+        
       </Routes>
       <Footer />
     </div>

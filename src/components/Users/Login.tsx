@@ -54,7 +54,7 @@ const Login = () => {
         className={`w-1/2 bg-cover bg-center ${
           isAnimating
             ? "transform translate-x-1/2 transition-transform duration-1000"
-            : ""
+            : " transform scale-x-[-1]"
         }`}
         style={{ backgroundImage: "url('./images/image.png')" }}
       ></div>

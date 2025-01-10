@@ -20,7 +20,7 @@ const Product: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://fakestoreapi.com/products");
+        // const response = await fetch("https://fakestoreapi.com/products");
         const data = await response.json();
         dispatch(setProduct(data));
         // console.log("sdsdsdsds", products);

@@ -41,21 +41,21 @@ const demoProducts = [
   },
 ];
 
-const List = [
-  {
-    name: "Home",
-    path: "/",
-  },
-  {
-    name: "Product",
-    path: "/product",
-  },
-];
+// const List = [
+//   {
+//     name: "Home",
+//     path: "/",
+//   },
+//   {
+//     name: "Product",
+//     path: "/product",
+//   },
+// ];
 
 const Home = () => {
   return (
     <>
-      <div className="flex flex-col sm:flex-rowjustify-center items-center">
+      <div className="flex flex-col sm:flex- justify-center items-center">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 ">
           {demoProducts.map((item) => (
             <div

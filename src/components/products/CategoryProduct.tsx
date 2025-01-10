@@ -19,7 +19,7 @@ const CategoryProduct: React.FC = () => {
       <h1 className="text-3xl font-bold mb-4 text-center capitalize">
         {name} Products
       </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-6">
         {products.map((item: ProductType) => (
           <div
             key={item.id}

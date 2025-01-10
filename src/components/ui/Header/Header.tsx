@@ -8,11 +8,11 @@ const Header = () => {
   const user = useSelector((state) => state.user.user);
   console.log("user", user);
   return (
-    <div>
-      <div className="fixed top-28 right-6 z-50">
+    <div className="">
+      <div className="fixed top-28 right-6 z-50 ">
         <ModeToggle />
       </div>
-      <div className="flex justify-between items-center dark:bg-slate-700 dark:text-white bg-slate-100 tracking-tight text-black px-6 py-2 font-medium">
+      <div className="  hidden sm:flex justify-between items-center dark:bg-slate-700 dark:text-white bg-slate-100 tracking-tight text-black px-6 py-2 font-medium">
         <div>
           <Link to="/">
             <img
@@ -22,7 +22,7 @@ const Header = () => {
             />
           </Link>
         </div>
-        <div>
+        <div className="">
           <ul className="inline-flex space-x-4">
             <li className="hover:text-blue-500">
               Find a Store <span className="mx-2">|</span>

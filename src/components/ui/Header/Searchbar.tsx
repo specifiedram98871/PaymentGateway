@@ -16,7 +16,7 @@ const Searchbar = () => {
           placeholder="Search..."
         />
       </div>
-      <div className='p-2 flex items-center hover:bg-slate-300 rounded-full '>
+      <div className='p-2 flex items-center hover:bg-slate-300 rounded-full'>
         <Link to="/cart">
         
           <FontAwesomeIcon className=' h-5 w-5 rounded-full P-1' icon={faBagShopping} />

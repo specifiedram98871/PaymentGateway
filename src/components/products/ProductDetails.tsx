@@ -4,8 +4,10 @@ import { useParams } from "react-router-dom";
 import { RootState } from "@/redux/store";
 import { Product as ProductType } from "@/redux/cartSlice"; // Import the Product type
 import { addToCart } from "@/redux/cartSlice";
+import { ToastContainer,toast } from "react-toastify";
 
 const ProductDetails: React.FC = () => {
+   
   const { id } = useParams<{ id: string }>();
   const product = useSelector((state: RootState) =>
     state.product.product.find((item: ProductType) => item.id === parseInt(id))
@@ -18,6 +20,16 @@ const ProductDetails: React.FC = () => {
 
   const handleAddToCart = () => {
     dispatch(addToCart(product));
+    toast.success("🦄 Added to cart", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
   };
 
   return (
@@ -45,6 +57,18 @@ const ProductDetails: React.FC = () => {
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
           >
             Add to Cart
+            <ToastContainer
+              position="bottom-right"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick={false}
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="dark"
+            />
           </button>
         </div>
       </div>
