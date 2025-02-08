@@ -13,7 +13,7 @@ import Signin from "./components/Users/Signin";
 import Payment from "./components/cart/Payment";
 import ProtectedRoute from "./routes/protectedRoutes";
 import OrderSuccess from "./components/cart/OrderSuccess";
-import AdminDashboard from "./admin/adminDashboard";
+import AdminDashboard from "./admin/AdminDashboard";
 function App() {
   
   // const [theme,setTheme] = useState(true)
@@ -33,7 +33,7 @@ function App() {
         <Route
           path="/process/payment"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute isAdmin={false}>
               <Payment />
             </ProtectedRoute>
           }
