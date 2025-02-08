@@ -1,13 +1,20 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ],
-   "compilerOptions": {
-    "baseUrl": ".",
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "baseUrl": ".",  // This should be the base URL for your project
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["src/*"]  // This maps '@' to the 'src' folder
     }
-  }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
 }

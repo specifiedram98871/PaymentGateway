@@ -1,4 +1,4 @@
-name: Deploy Next.js site to Pages
+name: Deploy React app to GitHub Pages
 
 on:
   push:
@@ -30,16 +30,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build project
+      - name: Build the React app
         run: npm run build
 
-      - name: Export Next.js static files
-        run: npm run export
-
-      - name: Upload artifact
+      - name: Upload build folder
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: ./dist
 
   deploy:
     environment:
@@ -56,8 +53,6 @@ jobs:
         run: npm install -g gh-pages
 
       - name: Deploy with gh-pages
-        run: |
-          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-          npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
+        run: npm run deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
