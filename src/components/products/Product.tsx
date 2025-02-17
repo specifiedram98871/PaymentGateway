@@ -33,8 +33,8 @@ const Product: React.FC = () => {
   }, [dispatch, cartItems]);
 
   return (
-    <div className="flex flex-col items-center justify-center mt-10">
-      <div className="w-[80%] grid grid-cols-1 md:grid-cols-3 gap-5">
+    <div className="flex flex-col items-center justify-center mt-36">
+      <div className="w-[80%] grid grid-cols-1 md:grid-cols-4 gap-5">
         {products.slice(0, visibleProduct).map((item: ProductType) => (
           <div
             className="max-w-sm mx-auto bg-white rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 text-center"

@@ -49,19 +49,19 @@ const MainHeader = () => {
 
   return (
     <div
-      className={`z-10 top-0 left-0 right-0 transition-transform duration-300 ease-in-out ${
+      className={`z-10 fixed top-0 left-0 right-0 transition-transform duration-300 ease-in-out ${
         lastScrollY === 0 ? "top-10" : "bg-transparent/60"
       } ${showNav ? "translate-y-0 backdrop-blur-sm" : "-translate-y-full"}`}
     >
-      <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 justify-between items-center ">
+      <div className=" flex justify-center items-center sm:grid grid-cols-2 md:grid-cols-3  ">
         <div className="px-4 py-2 ">
           <img
             src="./images/image.png"
-            className="rounded-full h-[3.2rem]"
+            className="rounded-full md:h-[3.2rem] h-10"
             alt="profile"
           />
         </div>
-        <div className="hidden sm:flex justify-center items-center gap-4">
+        <div className="hidden md:flex justify-center items-center gap-4">
           {categories.map((item) => (
             <ul
               key={item.id}
@@ -70,7 +70,7 @@ const MainHeader = () => {
               onMouseLeave={() => setActiveCategory(null)}
             >
               <Link to={`/category/${item.name}`}>
-                <li className="hover:underline cursor-pointer py-4">
+                <li className="hover:underline cursor-pointer text-xl font-bold py-4">
                   {item.name}
                 </li>
               </Link>
@@ -85,7 +85,7 @@ const MainHeader = () => {
                   <ul className="flex justify-center py-4 w-full">
                     {item.submenu.map((subitem, index) => (
                       <Link key={index} to={`/category/${subitem}`}>
-                        <li className="hover:underline p-2">{subitem}</li>
+                        <li className="hover:underline p-2 text-xl font-sans">{subitem}</li>
                       </Link>
                     ))}
                   </ul>
@@ -94,7 +94,7 @@ const MainHeader = () => {
             </ul>
           ))}
         </div>
-        <div className="">
+        <div className="w-full">
           <Searchbar />
         </div>
       </div>
