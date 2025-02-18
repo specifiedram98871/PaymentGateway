@@ -2,3 +2,19 @@
   color:rgb(97, 91, 91);
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+/* Define custom keyframes for slide-in animation */
+@keyframes slideIn {
+  from {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+/* Create a class for the slide-in animation */
+.slide-in {
+  animation: slideIn 0.5s ease-out forwards;
+}

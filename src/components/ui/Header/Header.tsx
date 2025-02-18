@@ -3,16 +3,15 @@ import MainHeader from "./mainHeaader";
 import { ModeToggle } from "@/components/mode-toggle";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-
 const Header = () => {
   const user = useSelector((state) => state.user.user);
   console.log("user", user);
   return (
     <div className="">
-      <div className="fixed top-28 right-6 z-50 ">
+      <div className="fixed right-2 z-50 ">
         <ModeToggle />
       </div>
-      <div className="  hidden sm:flex justify-between items-center dark:bg-slate-700 dark:text-white bg-slate-100 tracking-tight text-black px-6 py-2 font-medium">
+      <div className=" px-14 hidden lg:flex justify-between items-center dark:bg-slate-700 dark:text-white bg-slate-100 tracking-tight text-black py-2 font-medium">
         <div>
           <Link to="/">
             <img

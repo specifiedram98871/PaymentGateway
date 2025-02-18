@@ -2,29 +2,8 @@ import React, { useEffect, useState } from "react";
 import Searchbar from "./Searchbar";
 import { Link } from "react-router-dom";
 import { current } from "@reduxjs/toolkit";
+import { categories, Categories } from "./Categories";
 
-const categories = [
-  {
-    id: 1,
-    name: "Men's Clothing",
-    submenu: ["T-shirts", "Casual shirts", "Formal shirts", "Sweatshirts"],
-  },
-  {
-    id: 2,
-    name: "Jewelery",
-    submenu: ["Necklaces", "Earrings", "Rings", "Bracelets"],
-  },
-  {
-    id: 3,
-    name: "Electronics",
-    submenu: ["Laptops", "Smartphones", "Tablets", "Cameras"],
-  },
-  {
-    id: 4,
-    name: "Women's clothing",
-    submenu: ["Dresses", "T-shirts", "Skirts", "Jeans"],
-  },
-];
 
 const MainHeader = () => {
   const [activeCategory, setActiveCategory] = useState(null);
@@ -50,10 +29,10 @@ const MainHeader = () => {
   return (
     <div
       className={`z-10 fixed top-0 left-0 right-0 transition-transform duration-300 ease-in-out ${
-        lastScrollY === 0 ? "top-10" : "bg-transparent/60"
+        lastScrollY === 0 ? "top-10" : "bg-transparent/50"
       } ${showNav ? "translate-y-0 backdrop-blur-sm" : "-translate-y-full"}`}
     >
-      <div className=" flex justify-center items-center sm:grid grid-cols-2 md:grid-cols-3  ">
+      <div className=" flex justify-between items-center sm:grid grid-cols-2 md:grid-cols-3  ">
         <div className="px-4 py-2 ">
           <img
             src="./images/image.png"
@@ -62,7 +41,7 @@ const MainHeader = () => {
           />
         </div>
         <div className="hidden md:flex justify-center items-center gap-4">
-          {categories.map((item) => (
+          {categories.map((item: Categories) => (
             <ul
               key={item.id}
               className="py-4"
@@ -94,7 +73,7 @@ const MainHeader = () => {
             </ul>
           ))}
         </div>
-        <div className="w-full">
+        <div className="px-2 lg:px-14">
           <Searchbar />
         </div>
       </div>
