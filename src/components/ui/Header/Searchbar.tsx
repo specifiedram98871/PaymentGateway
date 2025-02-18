@@ -27,7 +27,7 @@ const Searchbar = () => {
       <div className='' onClick={()=>{setShow(!show)}}>
         <FontAwesomeIcon className="dark:text-white  text-2xl top-[-10px] hover:text-orange-500" icon={faBars} />
       </div>
-      <div onClick={()=>{setShow(!show)}} className={`${show?"translate-x-[0%]":" translate-x-[100%]"} w-2/3 absolute min-h-screen top-[-0px] right-0 bg-white  transform transition ease-in-out duration-500 ` }><Slider/> </div>
+      <div onClick={()=>{setShow(!show)}} className={`${show?"translate-x-[0%]":" translate-x-[100%]"} w-1/2 absolute min-h-screen top-[-0px] right-0 bg-white  transform transition ease-in-out duration-500 ` }><Slider/> </div>
     </div>
   );
 }
