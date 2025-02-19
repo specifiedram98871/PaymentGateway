@@ -15,7 +15,7 @@ const CategoryProduct: React.FC = () => {
   console.log("products", products);
 
   return (
-    <div className="container mx-auto p-4 translate-y-[5rem] ">
+    <div className="container min-h-screen mx-auto p-4 translate-y-[5rem] ">
       <h1 className="text-3xl font-bold mb-4 text-center capitalize">
         {name} Products
       </h1>
@@ -35,7 +35,7 @@ const CategoryProduct: React.FC = () => {
             <div className="mt-4">
               <h2 className="text-xl font-semibold">{item.title}</h2>
               <p className="text-gray-600 dark:text-gray-400">
-                Rs{item.price * 100}
+                Rs{item.price * 1000}
               </p>
             </div>
           </div>

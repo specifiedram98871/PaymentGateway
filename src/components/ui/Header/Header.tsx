@@ -8,7 +8,7 @@ const Header = () => {
   console.log("user", user);
   return (
     <div className="">
-      <div className="fixed right-2 z-50 ">
+      <div className="fixed right- z-50 md:right-0 border-slate-200 ">
         <ModeToggle />
       </div>
       <div className=" px-14 hidden lg:flex justify-between items-center dark:bg-slate-700 dark:text-white bg-slate-100 tracking-tight text-black py-2 font-medium">
