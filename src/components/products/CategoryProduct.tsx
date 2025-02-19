@@ -35,7 +35,7 @@ const CategoryProduct: React.FC = () => {
             <div className="mt-4">
               <h2 className="text-xl font-semibold">{item.title}</h2>
               <p className="text-gray-600 dark:text-gray-400">
-                Rs{item.price * 1000}
+                Rs{item.price * 100}
               </p>
             </div>
           </div>

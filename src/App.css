@@ -1,5 +1,56 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.banner-slide-in {
+  animation: slideIn 1s forwards;
+}
+
+.banner-slide-out {
+  animation: slideOut 1s forwards;
+}
+
+.banner-container {
+  width: 100%;
+  max-width: 100%; /* Ensures no overflow */
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient background */
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.banner-message {
+  position: absolute;
+  width: 100%; /* Ensures the width is consistent */
+  white-space: nowrap;
+  text-align: center;
+  padding: 0.5rem;
+  color: white; /* Text color */
+}
 
 
 body {

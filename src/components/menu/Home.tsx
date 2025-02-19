@@ -1,79 +1,34 @@
 import { Link } from "react-router-dom";
 import React from "react";
-
-const demoProducts = [
-  {
-    id: 1,
-    title: "Product with Aesthetic Design",
-    price: 100,
-    description: "Product with aesthetic design",
-    category: "Men's Clothing",
-    image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-    rating: {
-      rate: 3.9,
-      count: 120,
-    },
-  },
-  {
-    id: 2,
-    title: "Made in Nepal T-shirt",
-    price: 150,
-    description: "Made with pure 100% natural material",
-    category: "Men's Clothing",
-    image:
-      "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
-    rating: {
-      rate: 3.9,
-      count: 120,
-    },
-  },
-  {
-    id: 3,
-    title: "High Speed SSD",
-    price: 200,
-    description: "High Speed SSD",
-    category: "Electronics",
-    image: "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg",
-    rating: {
-      rate: 3.9,
-      count: 120,
-    },
-  },
-];
-
-// const List = [
-//   {
-//     name: "Home",
-//     path: "/",
-//   },
-//   {
-//     name: "Product",
-//     path: "/product",
-//   },
-// ];
+import { CarouselDemo } from "./carousel/Carousel";
+import { demoProducts } from "./slider/DemoProduct";
+import Banner from "./slider/Banner";
 
 const Home = () => {
   return (
     <>
-      <div className="flex flex-col sm:flex- justify-center items-center min-h-screen">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 ">
+      <div className="flex flex-col sm:flex justify-center items-center min-h-screen">
+        <div className=" top-36 relative w-[100%] h-[20vh] bg-transparent">
+          <Banner />
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 min-h-[100%] my-auto gap-6 ">
           {demoProducts.map((item) => (
             <div
               className="mt-10 p-4 border rounded-lg flex flex-col justify-center items-center shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl "
               key={item.id}
             >
-              <h3 className="font-bold text-xl sm:text-2xl lg:text-3xl text-center mb-4 text-gray-800">
+              <h3 className="font-bold text-white text-xl sm:text-2xl lg:text-3xl text-center mb-4 text-gray-800">
                 {item.title}
               </h3>
-              <div className="w-full flex justify-center">
+              <div className="">
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full sm:w-[15rem] lg:w-[20rem] p-4 rounded-lg"
+                  className="w-full sm:w-[15rem] min-h-[20rem] h-[25rem] object-cover  lg:w-[20rem] p- rounded-lg"
                 />
               </div>
               <div className="dark:text-white flex flex-col justify-center items-center text-center">
-                <p className="bg-gray-200 text-lg sm:text-xl lg:text-2xl font-semibold p-2 rounded-lg mb-2">
+                <p className="text-lg sm:text-xl lg:text-2xl font-semibold p-2 rounded-lg mb-2">
                   ${item.price}
                 </p>
                 <p className="text-gray-700 mb-2">{item.description}</p>
@@ -95,6 +50,7 @@ const Home = () => {
             </button>
           </Link>
         </div>
+        <CarouselDemo/>
       </div>
     </>
   );

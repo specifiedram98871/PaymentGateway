@@ -34,15 +34,15 @@ const Product: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen items-center justify-center mt-36">
-      <div className="w-[80%] grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div className="w-[80%] grid grid-cols-1 md:grid-cols-3 gap-8 ">
         {products.slice(0, visibleProduct).map((item: ProductType) => (
           <div
-            className="max-w-lg h-[%] p-4 border-sky-100 border-2 flex flex-col mx-auto bg-white rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 text-center"
+            className="max-w-lg hover:scale-[1.05] teansform transition ease-in-out duration-300 p-4 border-sky-100 border-2 flex flex-col mx-auto bg-white rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 text-center"
             key={item.id}
           >
             <Link to={`/product/${item.id}`}>
             <img
-              className="object-contain w-full h-[28rem] rounded-t-lg "
+              className="object-contain w-full h-[28rem]  rounded-t-lg "
               src={item.image}
               alt={item.category}
               />
