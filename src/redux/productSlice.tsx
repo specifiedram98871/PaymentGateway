@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
-interface Product {
+export interface Product {
   id: number;
   title: string;
   price: number;
@@ -14,7 +14,7 @@ interface Product {
   };
 }
 
-interface ProductState {
+export interface ProductState {
   product: Product[];
 }
 

@@ -34,6 +34,7 @@ const Product: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen items-center justify-center mt-36">
+      <h1 className="text-3xl font-bold mb-8 text-center">All Products</h1>
       <div className="w-[80%] grid grid-cols-1 md:grid-cols-3 gap-8 ">
         {products.slice(0, visibleProduct).map((item: ProductType) => (
           <div
@@ -66,10 +67,10 @@ const Product: React.FC = () => {
           </div>
         ))}
       </div>
-      <div className="flex justify-center items-center gap-4">
+      <div className="flex justify-center items-center translate-y-10 gap-4">
         {visibleProduct < products.length && (
           <button
-            className="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded"
+            className="bg-red-500 hover:bg-green-500 text-white font-bold py-2 px-2 rounded"
             onClick={() => setVisibleProduct((prev) => prev + 4)}
           >
             Show more
@@ -77,7 +78,7 @@ const Product: React.FC = () => {
         )}
         {visibleProduct > 4 && (
           <button
-            className="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            className="bg-blue-500 hover:bg-red-500 text-white font-bold py-2 px-4 rounded"
             onClick={() => setVisibleProduct((prev) => prev - 4)}
           >
             Show less

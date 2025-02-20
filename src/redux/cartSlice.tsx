@@ -11,12 +11,12 @@ interface Product {
     count: number;
   };
 }
-interface cartItems extends Product {
+export interface CartItems extends Product {
     quantity: number;
 }
 
-interface CartState {
-    items: cartItems[];
+export interface CartState {
+    items: CartItems[];
     total: number;
 }
 

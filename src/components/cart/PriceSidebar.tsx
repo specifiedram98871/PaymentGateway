@@ -1,8 +1,8 @@
 import React from "react";
-import { cartItems } from "@/redux/cartSlice"; // Adjust the import path as needed
+import { CartItems } from "@/redux/cartSlice"; // Adjust the import path as needed
 
 interface PriceSidebarProps {
-  cartItems: cartItems[];
+  cartItems: CartItems[];
 }
 
 const PriceSidebar: React.FC<PriceSidebarProps> = ({ cartItems = [] }) => {

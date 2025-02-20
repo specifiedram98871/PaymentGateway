@@ -3,40 +3,58 @@ import { useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { RootState } from "@/redux/Store";
 import { Product as ProductType } from "@/redux/cartSlice";
+import { addToCart } from "@/redux/cartSlice";
+import { useDispatch } from "react-redux";
 
 const CategoryProduct: React.FC = () => {
   const { name } = useParams<{ name: string }>();
+  const dispatch = useDispatch();
+
   const products = useSelector((state: RootState) =>
     state.product.product.filter(
       (item: ProductType) =>
         item.category.toLowerCase() === name?.toLocaleLowerCase()
     )
   );
-  console.log("products", products);
+
+  const handleCart = (item: ProductType) => {
+    dispatch(addToCart(item));
+  };
 
   return (
-    <div className="container min-h-screen mx-auto p-4 translate-y-[5rem] ">
-      <h1 className="text-3xl font-bold mb-4 text-center capitalize">
+    <div className="flex flex-col min-h-screen items-center justify-center mt-36">
+      <h1 className="text-3xl font-bold mb-8 text-center capitalize">
         {name} Products
       </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-6">
+      <div className="w-[80%] grid grid-cols-1 md:grid-cols-3 gap-8">
         {products.map((item: ProductType) => (
           <div
             key={item.id}
-            className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4"
+            className="max-w-lg hover:scale-[1.05] transform transition ease-in-out duration-300 p-4 border-sky-100 border-2 flex flex-col mx-auto bg-white rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 text-center"
           >
             <Link to={`/product/${item.id}`}>
               <img
+                className="object-contain w-full h-[28rem] rounded-t-lg"
                 src={item.image}
-                alt={item.title}
-                className="w-full h-48 object-cover rounded-t-lg"
+                alt={item.category}
               />
             </Link>
-            <div className="mt-4">
-              <h2 className="text-xl font-semibold">{item.title}</h2>
-              <p className="text-gray-600 dark:text-gray-400">
-                Rs{item.price * 100}
-              </p>
+            <h2 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white p-4 mt-4">
+              {item.title}
+            </h2>
+            <p className="font-normal line-clamp-2 text-gray-700 dark:text-gray-400 overflow-hidden">
+              {item.description}
+            </p>
+            <div className="flex justify-between items-center p-6">
+              <button
+                onClick={() => handleCart(item)}
+                className="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              >
+                Add to cart
+              </button>
+              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                <span>Rs.{item.price * 100}</span>
+              </button>
             </div>
           </div>
         ))}

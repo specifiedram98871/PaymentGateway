@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { RootState } from "@/redux/store";
-import { Product as ProductType } from "@/redux/cartSlice";
+import { Product as ProductType } from "@/redux/productSlice";
 import { addToCart } from "@/redux/cartSlice";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

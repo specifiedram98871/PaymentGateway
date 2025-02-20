@@ -2,27 +2,27 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "@/redux/Store";
 import { removeFromCart } from "@/redux/cartSlice";
-import { Product as ProductType } from "@/redux/cartSlice";
+import { Product} from "@/redux/productSlice";
 import { useNavigate } from "react-router-dom";
 import PriceSidebar from "./PriceSidebar";
 
 const Cart: React.FC = () => {
   const items = useSelector((state: RootState) => state.cart.items);
-  const data = [{
-    order_id: "test13",
-    cartItems: items
-  }]
+//   const data = [{
+//     order_id: "test13",
+//     cartItems: items
+// }]
   const total = useSelector((state: RootState) => state.cart.total);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   console.log(items);
-  console.log("data",data);
-  const handleRemoveFromCart = (product: ProductType) => {
+  // console.log("data",data);
+  const handleRemoveFromCart = (product: Product) => {
     dispatch(removeFromCart(product));
   };
 
   return (
-    <div className="container md:w-3/4 mx-auto p-4 ">
+    <div className="container md:w-3/4 mx-auto p-4 translate-y-[10rem] ">
       <h1 className="text-3xl font-bold mb-4 text-center">
         Your Shopping Cart
       </h1>
