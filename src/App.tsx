@@ -23,7 +23,8 @@ function App() {
   return (
     <div className=" bg-slate-300 dark:bg-slate-800">
       <Header />
-      <Routes>
+       <div>
+      <Routes >
         <Route path="/" element={<Home />} />
         <Route path="/product" element={<Product />} />
         <Route path="/product/:id" element={<ProductDetails />} />
@@ -47,8 +48,9 @@ function App() {
         }></Route>
         
       </Routes>
-      <CarouselDemo/>
+      </div>
       <Footer />
+
     </div>
   );
 }

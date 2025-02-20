@@ -22,7 +22,7 @@ const Slider = ({ showSidebar, setShowSidebar }) => {
 
   return (
     <div
-      className={`fixed top-0 left-0 w-full h-full  backdrop-blur-lg shadow-lg dark:bg-gray-900/80 transition-transform duration-300 ease-in-out ${
+      className={`fixed top-[-10px] left-0 w-full h-[120vh]  backdrop-blur-lg shadow-lg dark:bg-gray-900/80 transition-transform duration-300 ease-in-out ${
         showSidebar ? "translate-x-0" : "-translate-x-0"
       }`}
     >

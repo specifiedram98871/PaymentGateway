@@ -29,7 +29,7 @@ const MainHeader = () => {
   return (
     <div
       className={`z-10 fixed top-0 left-0 right-0 transition-transform duration-300 ease-in-out ${
-        lastScrollY === 0 ? "top-10" : "bg-slate-700/60"
+        lastScrollY === 0 ? "top-0 md:top-10" : "bg-slate-700/60"
       } ${showNav ? "translate-y-0 backdrop-blur-lg" : "-translate-y-full"}`}
     >
       <div className=" flex justify-between items-center sm:grid grid-cols-2 md:grid-cols-3  ">

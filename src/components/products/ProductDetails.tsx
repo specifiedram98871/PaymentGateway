@@ -9,6 +9,15 @@ import "react-toastify/dist/ReactToastify.css";
 
 const ProductDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
+  const fetchProduct = async() => {
+    try {
+      const response = await fetch(`https://fakestoreapi.com/products/${id}`);
+      const data = await response.json();
+      console.log("data",data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const product = useSelector((state: RootState) =>
     state.product.product.find((item: ProductType) => item.id === parseInt(id))
   );
@@ -33,7 +42,7 @@ const ProductDetails: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-6 bg-gray-100 dark:bg-gray-900">
+    <div className="flex mt-5 md:mt-24 flex-col items-center justify-center min-h-screen p-6 bg-gray-100 dark:bg-gray-900">
       <div className="max-w-7xl bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden p-6 flex flex-col md:flex-row items-center">
         <img
           className="w-full md:w-1/2 object-cover rounded-lg shadow-md"
@@ -61,6 +70,7 @@ const ProductDetails: React.FC = () => {
         </div>
       </div>
       <ToastContainer />
+      <button className="h-40" onClick={()=>{fetchProduct();}}>dfdfdfdf</button>
     </div>
   );
 };

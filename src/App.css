@@ -32,24 +32,22 @@
 
 .banner-container {
   width: 100%;
-  max-width: 100%; /* Ensures no overflow */
+  font-size: 25px;
+  max-width: 100%; 
   position: relative;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient background */
   padding: 1rem;
-  border-radius: 0.5rem;
 }
 
 .banner-message {
   position: absolute;
-  width: 100%; /* Ensures the width is consistent */
+  width: 100%; 
   white-space: nowrap;
   text-align: center;
   padding: 0.5rem;
-  color: white; /* Text color */
 }
 
 
