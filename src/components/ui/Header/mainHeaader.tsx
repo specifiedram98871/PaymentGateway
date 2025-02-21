@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Searchbar from "./Searchbar";
 import { Link } from "react-router-dom";
-import { current } from "@reduxjs/toolkit";
 import { categories, Categories } from "./Categories";
 
 
@@ -9,7 +8,7 @@ const MainHeader = () => {
   const [activeCategory, setActiveCategory] = useState(null);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [showNav, setShowNav] = useState(true);
-  console.log("height", lastScrollY);
+  // console.log("height", lastScrollY);
   const handleScroll = () => {
     const currentScrollY = window.scrollY;
     if (currentScrollY < lastScrollY) {

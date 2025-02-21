@@ -4,6 +4,8 @@ import { Link, useParams } from "react-router-dom";
 import { RootState } from "@/redux/Store";
 import { Product as ProductType } from "@/redux/cartSlice";
 import { addToCart } from "@/redux/cartSlice";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 import { useDispatch } from "react-redux";
 
 const CategoryProduct: React.FC = () => {
@@ -45,12 +47,12 @@ const CategoryProduct: React.FC = () => {
             <p className="font-normal line-clamp-2 text-gray-700 dark:text-gray-400 overflow-hidden">
               {item.description}
             </p>
-            <div className="flex justify-between items-center p-6">
+            <div className="flex flex-col md:flex-row justify-between  items-center sm:mt-4 gap-6">
               <button
                 onClick={() => handleCart(item)}
-                className="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                className="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-7 w-full md:w-[20%] rounded"
               >
-                Add to cart
+               <FontAwesomeIcon icon={faCartShopping} />
               </button>
               <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                 <span>Rs.{item.price * 100}</span>

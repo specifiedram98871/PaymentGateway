@@ -14,8 +14,6 @@ import Payment from "./components/cart/Payment";
 import ProtectedRoute from "./routes/protectedRoutes";
 import OrderSuccess from "./components/cart/OrderSuccess";
 import AdminDashboard from "./admin/AdminDashboard";
-import { Carousel } from "./components/ui/carousel";
-import { CarouselDemo } from "./components/menu/carousel/Carousel";
 function App() {
   
   // const [theme,setTheme] = useState(true)
