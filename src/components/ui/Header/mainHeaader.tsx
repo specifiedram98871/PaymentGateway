@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Searchbar from "./Searchbar";
 import { Link } from "react-router-dom";
 import { categories, Categories } from "./Categories";

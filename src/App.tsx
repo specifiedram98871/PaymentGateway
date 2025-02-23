@@ -20,7 +20,7 @@ function App() {
   // const { setTheme } = useTheme();
   return (
     <div className=" bg-slate-300 dark:bg-slate-800">
-      <Header />
+      {/* <Header /> */}
        <div>
       <Routes >
         <Route path="/" element={<Home />} />
@@ -47,7 +47,7 @@ function App() {
         
       </Routes>
       </div>
-      <Footer />
+      {/* <Footer /> */}
 
     </div>
   );
